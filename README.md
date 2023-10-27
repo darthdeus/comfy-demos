@@ -31,10 +31,10 @@ CPU on every frame. What you see as "sprites" (player, enemy, gun) are just
 pixels that get copied from the source asset into the target texture one by
 one, every frame. They're copied in the right order, which is why things look
 the way they are. [This whole process is done by the `blit_at`
-function](https://github.com/darthdeus/demos/blob/master/bitmob/src/utils.rs#L6-L52).
+function](https://github.com/darthdeus/comfy-demos/blob/master/bitmob/src/utils.rs#L6-L52).
 
 The raytracing is also calculated quite simply by the [calculate
-lighting](https://github.com/darthdeus/demos/blob/master/bitmob/src/lighting.rs#L3-L130)
+lighting](https://github.com/darthdeus/comfy-demos/blob/master/bitmob/src/lighting.rs#L3-L130)
 function. If you're expecting fancy BVH or other spatial structures prepare
 yourself to be deeply disappointed. The raytracer just steps each ray pixel by
 pixel and checks for a wall in the grid.
