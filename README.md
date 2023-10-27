@@ -1,11 +1,12 @@
 # Comfy Demos
 
 This repo currently contains one opensource demo game made for the [1-bit game
-jam](https://logloggames.itch.io/bitmob-1-bit-jam). The code remains unchanged,
-while the music/SFX were replaced with our own SFX so that we could publish
-them with a permissive license (the original assets came from asset packs).
+jam](https://logloggames.itch.io/bitmob-1-bit-jam) using the [Comfy
+Engine](https://comfyengine.org/). The code remains unchanged, while the
+music/SFX were replaced with our own SFX so that we could publish them with a
+permissive license (the original assets came from asset packs).
 
-![BITMOB Screenshot](bitmob/screenshot.png)
+[![BITMOB Screenshot](bitmob/screenshot.png)](https://logloggames.itch.io/bitmob-1-bit-jam)
 
 # Disclaimers
 
