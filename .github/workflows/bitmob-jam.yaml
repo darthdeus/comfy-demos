@@ -1,0 +1,69 @@
+name: BITMOB (1-bit jam)
+
+on:
+  push:
+    branches:
+      - bitmob-1bit-jam
+
+env:
+  binary: bitmob
+  crate_name: bitmob
+  add_binaries_to_github_release: true
+  itch_target: logloggames/bitmob-1-bit-jam
+  CARGO_TERM_COLOR: always
+  CACHE_ON_FAILURE: true
+  CARGO_NET_GIT_FETCH_WITH_CLI: true
+
+
+jobs:
+  wasm-demo-itch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: little-core-labs/get-git-tag@v3.0.1
+        id: get_version
+
+      # - run: git config --global url."https://${{ secrets.EMBI_TOKEN }}@github.com".insteadOf https://github.com
+      - run: git config --global url."https://${{ secrets.EMBI_TOKEN }}@github.com".insteadOf ssh://git@github.com
+
+      - uses: actions/checkout@v2
+
+      - run: rm .cargo/config.toml
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - name: Cache rust modules
+        uses: Swatinem/rust-cache@v2.0.1
+        with:
+          cache-on-failure: true
+          shared-key: wasm-demo-itch
+
+      - run: cargo install --locked trunk
+
+      - run: ls
+      - run: tree
+
+      - run: trunk build --release --features embi/ci-release --public-url replace-with-relative
+        working-directory: ./bitmob
+
+      # - name: Setup upterm session
+      #   uses: lhotari/action-upterm@v1
+
+      - run: sed -i 's/\/replace-with-relative/./g' dist/index.html
+        working-directory: ./bitmob
+
+      - run: tree
+      - name: Install butler
+        run: |
+          curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+          unzip butler.zip
+          chmod +x butler
+          ./butler -V
+      - name: Upload to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        run: |
+          ./butler push \
+              --fix-permissions \
+              --userversion="${{ steps.get_version.outputs.tag }}" bitmob/dist/ \
+              ${{ env.itch_target }}:html5

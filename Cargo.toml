@@ -1,0 +1,20 @@
+[workspace]
+resolver = "2"
+
+members = [
+  "bitmob",
+]
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 1
+[profile.dev.package.egui]
+opt-level = 3
+# [profile.dev.package.rapier2d]
+# opt-level = 3
+# [profile.dev.package.nalgebra]
+# opt-level = 3
+# [profile.dev.package.parry2d]
+# opt-level = 3

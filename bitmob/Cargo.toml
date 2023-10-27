@@ -1,0 +1,9 @@
+[package]
+name = "bitmob"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# comfy = { path = "../../comfy/comfy" }
+comfy = "0.2.0"
+grids = "0.2.1"
