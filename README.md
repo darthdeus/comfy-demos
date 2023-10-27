@@ -53,6 +53,12 @@ will 100% change in the near future. That being said, if you like it, you
 should be able to just take the code and modify it to do whatever you want.
 This goes for the whole repo.
 
+Note that this game uses [`grids`](https://github.com/darthdeus/grids), which
+is a separate crate for easy 2D arrays, specifically of the grid style usage.
+This isn't a linear algebra library, but rather just "easy indexing with
+utilities". If you're making a grid based game or doing anything with 2d grids
+this may be useful to you.
+
 # Running the game
 
 To run the game simply run `make` and everything should work.
