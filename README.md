@@ -5,6 +5,8 @@ jam](https://logloggames.itch.io/bitmob-1-bit-jam). The code remains unchanged,
 while the music/SFX were replaced with our own SFX so that we could publish
 them with a permissive license (the original assets came from asset packs).
 
+![BITMOB Screenshot](bitmob/screenshot.png)
+
 # Disclaimers
 
 We (the authors at LogLog Games) are not in the business of making cleanest
