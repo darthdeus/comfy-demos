@@ -88,8 +88,9 @@ The reason for this is we really don't care what you do with this code, but
 some people might prefer a license they know over a random "public domain"
 license, hence MIT/Apache.
 
-All of the assets (images, music, SFX) are licensed under CC0, which means "public domain",
-which again means "you can do whatever you want, we don't care, you don't have to give credit".
+All of the assets (images, music, SFX) were created by us from scratch and are
+licensed under CC0, which means "public domain", which again means "you can do
+whatever you want, we don't care, you don't have to give credit".
 
 - https://creativecommons.org/public-domain/cc0/
 
