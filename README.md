@@ -69,6 +69,12 @@ supported in any way. If you're using it, you're on your own :) Feel free to
 ask questions in our Discord, and if there are problems that are related to
 Comfy Engine we will 100% address them.
 
+Note the repo also contains CI config that we've used for uploading to
+itch.io. It's not supposed to be run from this repo, but we're including
+it in case it's useful for someone. Again, this is not something that
+should be viewed as "the setup to use for Comfy", and it's up to those
+using it to figure out how to integrate it into their CI.
+
 # License
 
 All of the code in this repository is triple licensed under MIT, Apache 2.0,
