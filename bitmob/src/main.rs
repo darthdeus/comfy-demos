@@ -21,6 +21,6 @@ pub use crate::utils::*;
 
 simple_game!("BITMOB", GameState, setup, game_update);
 
-fn setup(state: &mut GameState, c: &mut EngineContext) {
+fn setup(_state: &mut GameState, _c: &mut EngineContext) {
     crate::assets::load_assets();
 }

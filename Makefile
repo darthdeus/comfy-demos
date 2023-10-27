@@ -5,7 +5,7 @@ default: desktop
 # default: wasm
 
 desktop:
-	RUST_LOG=trace,naga=warn,wgpu=warn,symphonia=warn RUST_BACKTRACE=1 cargo run --bin bitmob --features $(FEATURES)
+	RUST_LOG=info,naga=warn,wgpu=warn,symphonia=warn RUST_BACKTRACE=1 cargo run --bin bitmob --features $(FEATURES)
 
 wasm:
 	cd $(BIN) && trunk build --features $(FEATURES) --release
